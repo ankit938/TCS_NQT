@@ -1,0 +1,21 @@
+// This program moves all 0s (empty chocolates) to the end of the array while maintaining the order of non-zero elements. It first adds non-zero elements to a list, then appends all 0s, and finally prints the modified list.
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int[] arr=new int[]{4,0,7,8,0,7,3,0,5};
+        ArrayList<Integer> list=new ArrayList<>();
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]!=0){
+                list.add(arr[i]);
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==0){
+                list.add(arr[i]);
+            }
+        }
+        System.out.println(list);
+    }
+}
