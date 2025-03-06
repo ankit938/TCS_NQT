@@ -1,0 +1,26 @@
+// find an index such as the left side of sum is equal to the right side of the sum element 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int[] arr=new int[]{-7,1,5,2,-4,3,0};
+        int rsum=0;
+        int lsum=0;
+        boolean flag=true;
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<i;j++){
+                lsum+=arr[j];
+            }
+            for(int j=i+1;j<arr.length;j++){
+                rsum+=arr[j];
+            }
+            if(lsum==rsum){
+                System.out.print(i);
+                flag=false;
+                return;
+            }
+            lsum=0;
+            rsum=0;
+        }
+        if(flag) System.out.print(-1);
+    }
+}
