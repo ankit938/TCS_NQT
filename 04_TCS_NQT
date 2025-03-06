@@ -1,0 +1,17 @@
+// sum of unique numbers.
+
+import java.util.*;
+public class Main{
+	public static void main(String[] args){
+		int[] arr=new int[]{1,3,2,3,2,4};
+		int sum=0;
+		HashSet<Integer> set=new HashSet<>();
+		for(int num:arr){
+		    set.add(num);
+		}
+		for(int num:set){
+		    sum+=num;
+		}
+		System.out.println(sum);
+	}
+}
