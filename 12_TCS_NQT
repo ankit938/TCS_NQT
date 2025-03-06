@@ -1,0 +1,26 @@
+// sum of number till single digit
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int N=456;
+        int R=3;
+        int sum=0;
+        while(N!=0){
+            int rem=N%10;
+            sum+=rem;
+            N/=10;
+        }
+        int newSum=sum*R; // 4569
+        System.out.println(newSum);
+        int res=0;
+        String str=String.valueOf(newSum);
+        while(str.length()!=1){
+            res=0;
+            for(int i=0;i<str.length();i++){
+                res+=Character.getNumericValue(str.charAt(i));
+            }
+            str=String.valueOf(res);
+        }
+        System.out.print(str);
+    }
+}
