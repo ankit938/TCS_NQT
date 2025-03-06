@@ -1,0 +1,25 @@
+// find a maximum number in the given tar range and make an array
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int[] arr=new int[]{1,3,-1,-3,5,3,6,7};
+        int tar=3;
+        if(tar>arr.length){
+            return;
+        }
+        int brr[] =new int[arr.length-tar+1];
+        for(int i=0;i<arr.length-tar+1;i++){
+            int max=arr[i];
+            for(int j=i;j<i+tar;j++){
+                if(arr[j]>max){
+                    max=arr[j];
+                }
+            }
+            brr[i]=max;
+        }
+        for(int i=0;i<brr.length;i++){
+            System.out.print(brr[i]+" ");
+        }
+    }
+}
