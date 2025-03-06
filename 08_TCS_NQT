@@ -1,0 +1,17 @@
+// count of elememnt whose value is greater than all of its prior element.
+
+public class Main{
+    public static void main(String[] args){
+        int[] arr=new int[]{7,4,8,2,9};
+        int count=1;
+        for(int i=1;i<arr.length;i++){
+            for(int j=0;j<i;j++){
+                if(arr[j]>arr[i]){
+                    count++;
+                    break;
+                }
+            }
+        }
+        System.out.println(count);
+    }
+}
