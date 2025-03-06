@@ -1,0 +1,23 @@
+// A decimal number converted to integer then 1 to 0 and 0 to 1 then print it decimal value.
+
+import java.util.*;
+public class Main{
+    public static String binary(int n){
+        StringBuilder sb=new StringBuilder();
+        while(n!=0){
+            int x=n%2;
+            sb.append(x);
+            n/=2;
+        }
+        return sb.reverse().toString();
+    }
+    public static void main(String[] args){
+        int n=5;
+        String bin=binary(n); // 1000=> #000=>#111=>0111
+        String str=bin.replace('1','#');
+        str=str.replace('0','1');
+        str=str.replace('#','0');
+        System.out.println(Integer.parseInt(str));
+        System.out.println(Integer.parseInt(str,2));
+    }
+}
